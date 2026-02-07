@@ -13,8 +13,6 @@ import checkoutRoutes from "./routes/checkoutRoutes.js";
 import deliveryRoutes from "./routes/deliveryRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 
-
-
 const app = express();
 
 /* ================= Middleware ================= */
@@ -28,16 +26,21 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
-app.use("/api/cart", cartRoutes)
-app.use("/api/checkout", checkoutRoutes)
-app.use("/api/delivery", deliveryRoutes)
+app.use("/api/cart", cartRoutes);
+app.use("/api/checkout", checkoutRoutes);
+app.use("/api/delivery", deliveryRoutes);
 app.use("/api/admin", adminRoutes);
 
 /* ================= Database ================= */
 
-await connectDB()
+await connectDB();
 
 /* ================= Server ================= */
 
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 export default app;
