@@ -1,7 +1,7 @@
 const corsOptions = {
   origin: (origin, callback) => {
     const allowedOrigins = [
-      "http://localhost:5173",
+      "https://pizzahub-frontend-one.vercel.app",
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
