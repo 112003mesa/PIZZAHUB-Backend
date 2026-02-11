@@ -8,6 +8,7 @@ import {
   acceptOrderByDelivery,
   updateOrderStatusByDelivery,
   getOrderByIdForUser,
+  deleteOrder,
 } from "../controllers/orderController.js";
 
 import authMiddleware from "../middleware/authMiddleware.js";
@@ -29,6 +30,8 @@ router.put( "/delivery/accept/:id", authMiddleware, roleMiddleware(["delivery"])
 router.put( "/delivery/status/:id", authMiddleware, roleMiddleware(["delivery"]), updateOrderStatusByDelivery);
 
 router.get("/my/:id", authMiddleware, getOrderByIdForUser);
+
+router.delete("/delete/:id", authMiddleware, isAdmin, deleteOrder);
 
 
 

@@ -6,12 +6,12 @@ import authRoutes from "./routes/authRoutes.js";
 import productRoutes from "./routes/productRoute.js";
 import { connectDB } from "./config/db.js";
 import cookieParser from "cookie-parser";
-import corsOptions from "./config/corsOptions.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
 import checkoutRoutes from "./routes/checkoutRoutes.js";
 import deliveryRoutes from "./routes/deliveryRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+import corsOptions from "./config/corsOptions.js";
 
 const app = express();
 
